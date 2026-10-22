@@ -13,9 +13,63 @@
       "In psychology class we compared gaslighting with ordinary disagreement."
     ],
     "guidance": "A single lie, a disagreement, or two different memories of one event is not gaslighting by itself. People misremember honestly, and two people can see the same event differently. The term fits best when describing a sustained pattern of denying or rewriting reality that leaves someone doubting their own mind. Only the people involved know what happened; this tool cannot judge it.",
-    "patterns": ["gaslighting"],
-    "misuse_clues": ["disagree", "lied to me", "lied about", "forgot", "different opinion", "corrected me", "told me i was wrong", "didn't text", "didn't reply"],
-    "plausible_clues": ["denied it happened", "denied that it happened", "doubt my memory", "doubt my own memory", "doubt my sanity", "doubt my reality", "never happened", "imagining things", "for months", "for years", "over time", "pattern"],
+    "patterns": [
+      "gaslighting"
+    ],
+    "misuse_clues": [
+      "disagree",
+      "lied to me",
+      "lied about",
+      "forgot",
+      "different opinion",
+      "corrected me",
+      "told me i was wrong",
+      "didn't text",
+      "didn't reply",
+      "said i was wrong",
+      "was wrong",
+      "were wrong",
+      "wrong about",
+      "argu",
+      "one time",
+      "once",
+      "a disagreement",
+      "didn't agree",
+      "doesn't agree",
+      "won't admit",
+      "movie",
+      "ending",
+      "dinner",
+      "restaurant",
+      "song",
+      "opinion"
+    ],
+    "plausible_clues": [
+      "denied it happened",
+      "denied that it happened",
+      "doubt my memory",
+      "doubt my own memory",
+      "doubt my sanity",
+      "doubt my reality",
+      "never happened",
+      "imagining things",
+      "for months",
+      "for years",
+      "over time",
+      "pattern",
+      "repeatedly",
+      "over and over",
+      "again and again",
+      "every time",
+      "constantly",
+      "kept saying",
+      "made me doubt",
+      "makes me doubt",
+      "making me doubt",
+      "doubt myself",
+      "doubting myself",
+      "second-guess"
+    ],
     "humor": "POSSIBLE MISUSE: This word may be doing overtime.",
     "source_title": "APA Dictionary of Psychology: gaslighting",
     "source_url": "https://dictionary.apa.org/gaslighting"
@@ -34,9 +88,32 @@
       "A clinician explained the difference between narcissistic traits and the disorder."
     ],
     "guidance": "Selfish, vain, or inconsiderate behavior is not the same as narcissistic personality disorder, and traits exist on a spectrum. Casual use of the word is common, but it is a clinical label, and this tool cannot diagnose anyone. Be especially careful about applying it to a specific real person.",
-    "patterns": ["narcissist", "narcissists", "narcissistic"],
-    "misuse_clues": ["selfish", "selfie", "vain", "last coffee", "last slice", "last cookie", "didn't text", "didn't reply"],
-    "plausible_clues": ["personality disorder", "npd", "diagnos", "dsm", "clinician", "psychologist", "psychiatrist", "therapist", "textbook"],
+    "patterns": [
+      "narcissist",
+      "narcissists",
+      "narcissistic"
+    ],
+    "misuse_clues": [
+      "selfish",
+      "selfie",
+      "vain",
+      "last coffee",
+      "last slice",
+      "last cookie",
+      "didn't text",
+      "didn't reply"
+    ],
+    "plausible_clues": [
+      "personality disorder",
+      "npd",
+      "diagnos",
+      "dsm",
+      "clinician",
+      "psychologist",
+      "psychiatrist",
+      "therapist",
+      "textbook"
+    ],
     "humor": "POSSIBLE MISUSE: A diagnosis is not a synonym for 'rude'.",
     "source_title": "APA Dictionary of Psychology: narcissistic personality disorder",
     "source_url": "https://dictionary.apa.org/narcissistic-personality-disorder"
@@ -55,9 +132,35 @@
       "The group chat was full of constant put-downs and threats, which made it a toxic environment for me."
     ],
     "guidance": "The word is useful but vague. Naming the specific behavior (insults, control, threats, constant put-downs) usually communicates more than the label. Disagreement or incompatibility is not automatically toxicity, and the literal meaning is perfectly valid.",
-    "patterns": ["toxic"],
-    "misuse_clues": ["disagree", "different opinion", "didn't invite", "anyone who", "everyone who", "bad vibes", "not my type"],
-    "plausible_clues": ["waste", "chemical", "fumes", "gas", "mold", "spill", "poison", "pollut", "exposure", "substance", "belittl", "controlling", "threat", "insult", "put-down"],
+    "patterns": [
+      "toxic"
+    ],
+    "misuse_clues": [
+      "disagree",
+      "different opinion",
+      "didn't invite",
+      "anyone who",
+      "everyone who",
+      "bad vibes",
+      "not my type"
+    ],
+    "plausible_clues": [
+      "waste",
+      "chemical",
+      "fumes",
+      "gas",
+      "mold",
+      "spill",
+      "poison",
+      "pollut",
+      "exposure",
+      "substance",
+      "belittl",
+      "controlling",
+      "threat",
+      "insult",
+      "put-down"
+    ],
     "humor": "POSSIBLE MISUSE: Name the behavior. 'Toxic' is not a personality test.",
     "source_title": "Merriam-Webster Dictionary: toxic",
     "source_url": "https://www.merriam-webster.com/dictionary/toxic"
@@ -76,9 +179,33 @@
       "The emergency department treats blunt force trauma."
     ],
     "guidance": "Hyperbolic use can blur the difference between ordinary frustration and serious distress, but jokes about a bad day are not an attack on anyone's real experience. This tool does not and cannot decide whether anyone's experience counts as trauma; it only notes when the word sits next to everyday-inconvenience wording.",
-    "patterns": ["trauma"],
-    "misuse_clues": ["wifi", "traffic", "waiting in line", "monday", "buffering", "my phone died", "slow"],
-    "plausible_clues": ["therapy", "therapist", "ptsd", "accident", "assault", "abuse", "war", "blunt", "injury", "surgeon", "emergency", "processing", "survivor"],
+    "patterns": [
+      "trauma"
+    ],
+    "misuse_clues": [
+      "wifi",
+      "traffic",
+      "waiting in line",
+      "monday",
+      "buffering",
+      "my phone died",
+      "slow"
+    ],
+    "plausible_clues": [
+      "therapy",
+      "therapist",
+      "ptsd",
+      "accident",
+      "assault",
+      "abuse",
+      "war",
+      "blunt",
+      "injury",
+      "surgeon",
+      "emergency",
+      "processing",
+      "survivor"
+    ],
     "humor": "POSSIBLE MISUSE: Buffering is not a clinical event.",
     "source_title": "American Psychological Association: Trauma",
     "source_url": "https://www.apa.org/topics/trauma"
@@ -97,9 +224,20 @@
       "The article had a trigger warning at the top."
     ],
     "guidance": "The informal meaning is a normal part of the language and is not inherently incorrect. The clinical meaning is different, and the two are easy to blur. This tool does not label informal use as misuse; it only flags that the word has two meanings, and context is what separates them.",
-    "patterns": ["triggered", "triggering"],
+    "patterns": [
+      "triggered",
+      "triggering"
+    ],
     "misuse_clues": [],
-    "plausible_clues": ["flashback", "panic", "ptsd", "reminded me", "trauma response", "trigger warning", "survivor"],
+    "plausible_clues": [
+      "flashback",
+      "panic",
+      "ptsd",
+      "reminded me",
+      "trauma response",
+      "trigger warning",
+      "survivor"
+    ],
     "humor": "Two meanings, one word. Context does the heavy lifting.",
     "source_title": null,
     "source_url": null
@@ -118,9 +256,22 @@
       "The contract had several red flags that our lawyer pointed out."
     ],
     "guidance": "'Red flag' is a broad, informal phrase, and humorous use is common and fine. It works best when the warning sign is specific, such as controlling behavior, threats, or dishonesty about something important. One quirk or difference is usually not a pattern.",
-    "patterns": ["red flag", "red flags"],
+    "patterns": [
+      "red flag",
+      "red flags"
+    ],
     "misuse_clues": [],
-    "plausible_clues": ["safety", "unsafe", "controlling", "threat", "pattern", "isolat", "pressur", "contract", "fraud"],
+    "plausible_clues": [
+      "safety",
+      "unsafe",
+      "controlling",
+      "threat",
+      "pattern",
+      "isolat",
+      "pressur",
+      "contract",
+      "fraud"
+    ],
     "humor": "Not every difference is a flag. Some are just Tuesday.",
     "source_title": "Merriam-Webster Dictionary: red flag",
     "source_url": "https://www.merriam-webster.com/dictionary/red%20flag"
@@ -139,9 +290,36 @@
       "We discussed the idea of love bombing in a workshop on healthy relationships."
     ],
     "guidance": "Enthusiastic affection is not automatically love bombing, and some people simply move fast or express feelings openly. The concern is a pattern: intensity that pressures, isolates, or is followed by withdrawal or control. This is a popular term, not a formal clinical diagnosis, and this tool cannot judge anyone's intent.",
-    "patterns": ["love bombing", "love bomb", "love bombed", "love bombs"],
-    "misuse_clues": ["good morning", "complimented me", "first date", "second date", "nice text"],
-    "plausible_clues": ["then withdrew", "then turned cold", "devalu", "cycle", "pattern", "isolat", "pressur", "controlling"],
+    "patterns": [
+      "love bombing",
+      "love bomb",
+      "love bombed",
+      "love bombs"
+    ],
+    "misuse_clues": [
+      "good morning",
+      "complimented me",
+      "first date",
+      "second date",
+      "nice text",
+      "one time",
+      "once",
+      "a disagreement"
+    ],
+    "plausible_clues": [
+      "then withdrew",
+      "then turned cold",
+      "devalu",
+      "cycle",
+      "pattern",
+      "isolat",
+      "pressur",
+      "controlling",
+      "repeatedly",
+      "over and over",
+      "every time",
+      "constantly"
+    ],
     "humor": "POSSIBLE MISUSE: A compliment is not a bomb.",
     "source_title": null,
     "source_url": null
@@ -160,9 +338,35 @@
       "The marketing course covered manipulative sales tactics and how to spot them."
     ],
     "guidance": "Asking for a favor, making an honest argument, or saying no is not manipulation. Manipulation typically involves deception, pressure, or exploiting someone's vulnerabilities. People are often unaware of what they are doing, so the label says little about intent, and this tool cannot assess it.",
-    "patterns": ["manipulative", "manipulatively"],
-    "misuse_clues": ["asked me to", "asked for a favor", "convinced me", "persuaded me", "disagree", "said no"],
-    "plausible_clues": ["guilt-trip", "lied to get", "pressur", "threatened", "isolat", "exploit", "deceiv", "deceit"],
+    "patterns": [
+      "manipulative",
+      "manipulatively"
+    ],
+    "misuse_clues": [
+      "asked me to",
+      "asked for a favor",
+      "convinced me",
+      "persuaded me",
+      "disagree",
+      "said no",
+      "one time",
+      "once",
+      "a disagreement"
+    ],
+    "plausible_clues": [
+      "guilt-trip",
+      "lied to get",
+      "pressur",
+      "threatened",
+      "isolat",
+      "exploit",
+      "deceiv",
+      "deceit",
+      "repeatedly",
+      "over and over",
+      "every time",
+      "constantly"
+    ],
     "humor": "POSSIBLE MISUSE: Asking nicely is not a heist.",
     "source_title": "Merriam-Webster Dictionary: manipulative",
     "source_url": "https://www.merriam-webster.com/dictionary/manipulative"
@@ -181,9 +385,33 @@
       "The survey marked the property boundaries."
     ],
     "guidance": "A boundary governs what you do, not what another adult is allowed to do. Requests and preferences are fine, but demands that control someone else's friendships, movements, or choices are better described as rules or ultimatums. Healthy limits and honest disagreement can coexist; context matters.",
-    "patterns": ["boundaries", "boundary"],
-    "misuse_clues": ["you can't", "you must", "you're not allowed", "you are not allowed", "you aren't allowed", "you have to", "stop talking to", "not allowed to see"],
-    "plausible_clues": ["i will leave", "i will end", "i need space", "i won't", "i'm not able to", "my limit", "property", "border", "county", "map", "river"],
+    "patterns": [
+      "boundaries",
+      "boundary"
+    ],
+    "misuse_clues": [
+      "you can't",
+      "you must",
+      "you're not allowed",
+      "you are not allowed",
+      "you aren't allowed",
+      "you have to",
+      "stop talking to",
+      "not allowed to see"
+    ],
+    "plausible_clues": [
+      "i will leave",
+      "i will end",
+      "i need space",
+      "i won't",
+      "i'm not able to",
+      "my limit",
+      "property",
+      "border",
+      "county",
+      "map",
+      "river"
+    ],
     "humor": "POSSIBLE MISUSE: A boundary is a fence for you, not a leash for them.",
     "source_title": null,
     "source_url": null
@@ -202,9 +430,28 @@
       "We discussed how toxic positivity can shut down honest conversation."
     ],
     "guidance": "Being cheerful, hopeful, or encouraging is not toxic positivity. The issue arises when positivity is used to shut down or dismiss real difficulty. Intent is often kind, which is why context matters. This is a popular term, not a clinical one.",
-    "patterns": ["toxic positivity"],
-    "misuse_clues": ["optimistic", "happy for", "congratulat", "good mood", "compliment", "smiled"],
-    "plausible_clues": ["good vibes only", "just be positive", "look on the bright side", "at least", "dismiss", "minimiz", "grief", "grieving", "cheer up"],
+    "patterns": [
+      "toxic positivity"
+    ],
+    "misuse_clues": [
+      "optimistic",
+      "happy for",
+      "congratulat",
+      "good mood",
+      "compliment",
+      "smiled"
+    ],
+    "plausible_clues": [
+      "good vibes only",
+      "just be positive",
+      "look on the bright side",
+      "at least",
+      "dismiss",
+      "minimiz",
+      "grief",
+      "grieving",
+      "cheer up"
+    ],
     "humor": "POSSIBLE MISUSE: Cheerfulness is allowed to exist.",
     "source_title": null,
     "source_url": null
@@ -223,9 +470,21 @@
       "Someone shouted 'emotional damage' after the joke, and everyone laughed."
     ],
     "guidance": "Used as a joke, the phrase is simply slang and is not incorrect. It is not a clinical term or a diagnosis. The serious sense relates to sustained harm and is separate from the meme. Context decides which one is meant.",
-    "patterns": ["emotional damage"],
+    "patterns": [
+      "emotional damage"
+    ],
     "misuse_clues": [],
-    "plausible_clues": ["lol", "lmao", "haha", "meme", "joke", "abuse", "therapy", "years of", "verbal"],
+    "plausible_clues": [
+      "lol",
+      "lmao",
+      "haha",
+      "meme",
+      "joke",
+      "abuse",
+      "therapy",
+      "years of",
+      "verbal"
+    ],
     "humor": "Slang is allowed. So is sincerity. Context sorts them out.",
     "source_title": null,
     "source_url": null
@@ -244,9 +503,26 @@
       "The seminar covered attachment theory and reactive attachment disorder."
     ],
     "guidance": "Liking closeness, texting often, or being sad after a breakup is not evidence of attachment issues. Attachment styles are research concepts describing tendencies, not defects, and they can shift over time. Labeling a real person from a few behaviors is unreliable, and this tool cannot assess anyone.",
-    "patterns": ["attachment issues", "attachment issue"],
-    "misuse_clues": ["texts me", "clingy", "needy", "texts a lot"],
-    "plausible_clues": ["attachment style", "attachment theory", "anxious attachment", "avoidant", "reactive attachment", "therapist", "childhood", "caregiver"],
+    "patterns": [
+      "attachment issues",
+      "attachment issue"
+    ],
+    "misuse_clues": [
+      "texts me",
+      "clingy",
+      "needy",
+      "texts a lot"
+    ],
+    "plausible_clues": [
+      "attachment style",
+      "attachment theory",
+      "anxious attachment",
+      "avoidant",
+      "reactive attachment",
+      "therapist",
+      "childhood",
+      "caregiver"
+    ],
     "humor": "POSSIBLE MISUSE: Texting back is not a syndrome.",
     "source_title": "APA Dictionary of Psychology: attachment theory",
     "source_url": "https://dictionary.apa.org/attachment-theory"
@@ -265,9 +541,65 @@
       "The article explains what it means to gaslight someone and how to recognize it."
     ],
     "guidance": "Wrong, mistaken, or forgetful is not gaslighting. Gaslighting involves repeated denial or distortion of reality that erodes someone's trust in their own mind. Context matters, and this tool cannot judge anyone's actions or intent.",
-    "patterns": ["gaslight", "gaslights", "gaslighted"],
-    "misuse_clues": ["disagree", "lied to me", "lied about", "forgot", "different opinion", "corrected me", "didn't text", "didn't reply"],
-    "plausible_clues": ["denied it happened", "denied that it happened", "doubt my memory", "doubt my own memory", "doubt my sanity", "doubt my reality", "never happened", "imagining things", "for months", "for years", "over time", "pattern"],
+    "patterns": [
+      "gaslight",
+      "gaslights",
+      "gaslighted"
+    ],
+    "misuse_clues": [
+      "disagree",
+      "lied to me",
+      "lied about",
+      "forgot",
+      "different opinion",
+      "corrected me",
+      "didn't text",
+      "didn't reply",
+      "said i was wrong",
+      "told me i was wrong",
+      "was wrong",
+      "were wrong",
+      "wrong about",
+      "argu",
+      "one time",
+      "once",
+      "a disagreement",
+      "didn't agree",
+      "doesn't agree",
+      "won't admit",
+      "movie",
+      "ending",
+      "dinner",
+      "restaurant",
+      "song",
+      "opinion"
+    ],
+    "plausible_clues": [
+      "denied it happened",
+      "denied that it happened",
+      "doubt my memory",
+      "doubt my own memory",
+      "doubt my sanity",
+      "doubt my reality",
+      "never happened",
+      "imagining things",
+      "for months",
+      "for years",
+      "over time",
+      "pattern",
+      "repeatedly",
+      "over and over",
+      "again and again",
+      "every time",
+      "constantly",
+      "kept saying",
+      "made me doubt",
+      "makes me doubt",
+      "making me doubt",
+      "doubt myself",
+      "doubting myself",
+      "second-guess"
+    ],
     "humor": "POSSIBLE MISUSE: Being wrong is not a power move.",
     "source_title": "Merriam-Webster Dictionary: gaslight",
     "source_url": "https://www.merriam-webster.com/dictionary/gaslight"
@@ -286,9 +618,34 @@
       "The article discussed narcissistic abuse and why the term is debated."
     ],
     "guidance": "Abuse can be real and serious whether or not the other person has any particular personality traits, and you do not need a label for the other person to recognize harm. The term is contested, since it is a popular rather than a clinical category. A single rude moment or argument is not abuse. This tool cannot judge any real situation.",
-    "patterns": ["narcissistic abuse", "narcissistic abuser"],
-    "misuse_clues": ["argued", "disagree", "rude", "didn't text", "didn't reply", "ignored me"],
-    "plausible_clues": ["therapist", "recovery", "pattern", "survivor", "support group", "abusive relationship", "for years"],
+    "patterns": [
+      "narcissistic abuse",
+      "narcissistic abuser"
+    ],
+    "misuse_clues": [
+      "argued",
+      "disagree",
+      "rude",
+      "didn't text",
+      "didn't reply",
+      "ignored me",
+      "one time",
+      "once",
+      "a disagreement"
+    ],
+    "plausible_clues": [
+      "therapist",
+      "recovery",
+      "pattern",
+      "survivor",
+      "support group",
+      "abusive relationship",
+      "for years",
+      "repeatedly",
+      "over and over",
+      "every time",
+      "constantly"
+    ],
     "humor": "POSSIBLE MISUSE: An argument over dinner is not an abuse category.",
     "source_title": null,
     "source_url": null
@@ -307,9 +664,30 @@
       "We talked about how to check in before sharing something heavy."
     ],
     "guidance": "Sharing difficult feelings with someone who is willing to listen is normal and healthy, and so is seeking support. The concern is about consent, capacity, and setting rather than about the content of what someone feels. Nobody should be shamed for needing to talk, and this tool cannot judge anyone's disclosure.",
-    "patterns": ["trauma dumping", "trauma dump", "trauma dumped"],
-    "misuse_clues": ["vented", "venting", "bad week", "bad day", "opened up", "told me about her day", "told me about his day"],
-    "plausible_clues": ["without asking", "stranger", "first date", "at work", "no warning", "every conversation", "didn't ask if", "capacity"],
+    "patterns": [
+      "trauma dumping",
+      "trauma dump",
+      "trauma dumped"
+    ],
+    "misuse_clues": [
+      "vented",
+      "venting",
+      "bad week",
+      "bad day",
+      "opened up",
+      "told me about her day",
+      "told me about his day"
+    ],
+    "plausible_clues": [
+      "without asking",
+      "stranger",
+      "first date",
+      "at work",
+      "no warning",
+      "every conversation",
+      "didn't ask if",
+      "capacity"
+    ],
     "humor": "POSSIBLE MISUSE: A bad day is allowed to be mentioned.",
     "source_title": null,
     "source_url": null

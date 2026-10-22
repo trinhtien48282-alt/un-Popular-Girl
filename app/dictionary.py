@@ -1,10 +1,26 @@
 """Load and validate the bundled terminology file."""
 import json
+import sys
 from pathlib import Path
 
 from .models import Entry
 
-DEFAULT_PATH = Path(__file__).resolve().parent.parent / "data" / "terminology.json"
+
+
+def resource_path(*parts: str) -> Path:
+    """Locate a bundled file from source or from a PyInstaller build.
+
+    Frozen: PyInstaller sets sys._MEIPASS to where bundled data lives
+    (<dist>/_internal for --onedir on PyInstaller 6+). Never use the .exe's
+    folder or the working directory; neither is reliable.
+    Source: the project root, two levels above this file.
+    """
+    base = getattr(sys, "_MEIPASS", None)
+    root = Path(base) if base else Path(__file__).resolve().parent.parent
+    return root.joinpath(*parts)
+
+
+DEFAULT_PATH = resource_path("data", "terminology.json")
 
 _STR_FIELDS = ("id", "term", "term_category", "definition", "guidance")
 _LIST_FIELDS = ("misuse_examples", "legitimate_examples", "patterns", "misuse_clues", "plausible_clues")

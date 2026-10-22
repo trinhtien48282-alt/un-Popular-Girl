@@ -2,7 +2,7 @@ import unittest
 
 from app.dictionary import load_entries
 from app.models import Category
-from app.scanner import Scanner
+from app.scanner import Scanner, line_col
 
 
 class ScannerTests(unittest.TestCase):
@@ -100,6 +100,69 @@ class ScannerTests(unittest.TestCase):
     def test_curly_apostrophe_clue(self):
         m = self.scanner.scan("He didn\u2019t text back, that's gaslighting.")[0]
         self.assertEqual(m.category, Category.POSSIBLE_MISUSE)
+
+    def test_trivial_disagreement_is_flagged(self):
+        text = "My brother said I was wrong about the movie's ending, so he's gaslighting me."
+        m = self.scanner.scan(text)[0]
+        self.assertEqual(m.category, Category.POSSIBLE_MISUSE)
+        text = "She argued about dinner, so she tried to gaslight me."
+        self.assertEqual(self.scanner.scan(text)[0].category, Category.POSSIBLE_MISUSE)
+
+    def test_repetition_clue_is_plausible(self):
+        text = "He repeatedly denied it happened and made me doubt myself, which is gaslighting."
+        self.assertEqual(self.scanner.scan(text)[0].category, Category.PLAUSIBLE_USAGE)
+
+    def test_no_clue_reason_is_honest_about_its_limits(self):
+        self.assertIn("fixed list", self.scanner.scan("Trauma.")[0].reason)
+
+    def test_line_col(self):
+        self.assertEqual(line_col("abc", 0), (1, 1))
+        self.assertEqual(line_col("abc\ndef", 5), (2, 2))
+        text = "one\ntwo toxic"
+        self.assertEqual(line_col(text, text.index("toxic")), (2, 5))
+
+    def test_negated_term_is_not_flagged_by_clue_words(self):
+        text = "My brother wasn't gaslighting me; we simply remembered the movie differently."
+        m = self.scanner.scan(text)[0]
+        self.assertEqual(m.category, Category.NEEDS_CONTEXT)
+        self.assertIn("negation", m.reason)
+        self.assertIn("wasn't", m.reason)
+
+    def test_negation_with_curly_apostrophe(self):
+        m = self.scanner.scan("He wasn\u2019t gaslighting me, just disagreeing about the movie.")[0]
+        self.assertEqual(m.category, Category.NEEDS_CONTEXT)
+        self.assertIn("negation", m.reason)
+
+    def test_dont_think_is_negation(self):
+        m = self.scanner.scan("I don't think that was gaslighting.")[0]
+        self.assertEqual(m.category, Category.NEEDS_CONTEXT)
+        self.assertIn("negation", m.reason)
+
+    def test_plain_accusation_is_not_treated_as_negated(self):
+        m = self.scanner.scan("He was gaslighting me.")[0]
+        self.assertEqual(m.category, Category.NEEDS_CONTEXT)
+        self.assertNotIn("negation", m.reason)  # bare match: the ordinary no-clue reason
+        flagged = self.scanner.scan("He was gaslighting me about the movie.")[0]
+        self.assertEqual(flagged.category, Category.POSSIBLE_MISUSE)
+
+    def test_negation_with_contrast_is_not_a_denial(self):
+        text = ("He wasn't gaslighting me at first, but later repeatedly denied conversations "
+                "we'd both had and insisted I was imagining things.")
+        m = self.scanner.scan(text)[0]
+        self.assertEqual(m.category, Category.PLAUSIBLE_USAGE)
+        self.assertNotIn("negation", m.reason)
+
+    def test_contrast_before_term_cancels_negation(self):
+        m = self.scanner.scan("He wasn't rude but he was gaslighting me about the movie.")[0]
+        self.assertEqual(m.category, Category.POSSIBLE_MISUSE)
+
+    def test_far_or_clause_separated_negation_is_ignored(self):
+        for text in (
+            "I don't know why he keeps gaslighting me about the movie.",
+            "He didn't text back, that's gaslighting.",
+            "It was not a good week and honestly the way he talks is just gaslighting about the movie.",
+        ):
+            self.assertNotIn("negation", self.scanner.scan(text)[0].reason, text)
 
     def test_deterministic(self):
         text = "Toxic positivity, trauma dumping, a red flag, and gaslighting. Toxic!"

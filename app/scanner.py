@@ -10,12 +10,19 @@ HOW IT WORKS
      plausible clue only -> PLAUSIBLE USAGE
      both, or neither    -> NEEDS CONTEXT   (the default for a bare match)
    Clue phrases match word prefixes ("isolat" matches "isolating").
+4. Narrow negation rule, checked first: if a negation cue ("wasn't", "not",
+   "never", "no", "without", "don't think", ...) sits within the 5 words before
+   the term, in the same clause, and no contrast word ("but", "however",
+   "later", "at first", ...) appears in that window or after the term in the
+   sentence, the term is treated as denied, not applied. Result: NEEDS CONTEXT,
+   clues ignored (they describe an accusation nobody is making).
 There is no score and no confidence number: the category is the whole result.
 
 LIMITATIONS (also shown in the UI)
 This is keyword matching, not language understanding. It cannot see intent,
-sarcasm, negation ("that is NOT gaslighting"), quotation, or who is speaking,
-and sentence splitting is naive (abbreviations like "e.g." end a "sentence").
+sarcasm, quotation, or who is speaking, and only handles negation through the
+narrow rule above (it misses "I doubt that was gaslighting", and can wrongly
+treat "I am not sure he's gaslighting me" as a denial). Sentence splitting is naive (abbreviations like "e.g." end a "sentence").
 Expect false positives and false negatives. A result is a prompt to think,
 never a verdict about a person's words, experience, or mind.
 """
@@ -25,12 +32,39 @@ from .models import Category, Entry, Match
 
 CONTEXT_CHARS = 40
 _SENTENCE_END = ".!?\n"
+_CLAUSE_BREAK = ",;:()"
+_NEGATION_WINDOW = 5  # words before the term
+# Deliberately narrow: bare "don't"/"can't" are excluded ("I don't know why he keeps gaslighting me").
+_NEGATION = re.compile(
+    r"\b(?:not|never|no|without|(?:is|was|are|were|ai)n't"
+    r"|(?:do|does|did)(?:n't|\s+not)\s+(?:really\s+)?(?:think|believe|say|call|consider|see|feel))\b",
+    re.IGNORECASE,
+)
+_CONTRAST = re.compile(
+    r"\b(?:but|however|although|though|yet|until|eventually|later|then|initially|anymore)\b|\bat first\b",
+    re.IGNORECASE,
+)
+
+
+def line_col(text: str, index: int) -> tuple[int, int]:
+    """1-based (line, column) of a character offset."""
+    return text.count("\n", 0, index) + 1, index - (text.rfind("\n", 0, index) + 1) + 1
 
 
 def _phrase(phrase: str, *, whole_word: bool) -> re.Pattern[str]:
     parts = re.split(r"[\s-]+", phrase.strip())
     body = r"[\s-]+".join(re.escape(p) for p in parts)
     return re.compile(r"(?<!\w)" + body + (r"(?!\w)" if whole_word else ""), re.IGNORECASE)
+
+
+def _negation_cue(norm: str, left: int, right: int, start: int, end: int) -> str | None:
+    """The negation cue denying the term at norm[start:end], else None."""
+    clause = max([left] + [norm.rfind(c, left, start) + 1 for c in _CLAUSE_BREAK])
+    window = " ".join(re.findall(r"[\w']+", norm[clause:start])[-_NEGATION_WINDOW:])
+    cue = _NEGATION.search(window)
+    if cue and not _CONTRAST.search(window) and not _CONTRAST.search(norm[end:right]):
+        return cue.group(0)
+    return None
 
 
 def _sentence_bounds(text: str, start: int, end: int) -> tuple[int, int]:
@@ -77,7 +111,11 @@ class Scanner:
         sentence = norm[left:right]
         misuse = next((m.group(0) for rx in misuse_rx if (m := rx.search(sentence))), None)
         plausible = next((m.group(0) for rx in plausible_rx if (m := rx.search(sentence))), None)
-        if misuse and not plausible:
+        negation = _negation_cue(norm, left, right, start, end)
+        if negation:
+            category = Category.NEEDS_CONTEXT
+            reason = f'The term follows a negation ("{negation}"), so it looks denied rather than applied. Clue words are ignored.'
+        elif misuse and not plausible:
             category = Category.POSSIBLE_MISUSE
             reason = f'Nearby wording ("{misuse}") often goes with loose or casual use of this term.'
         elif plausible and not misuse:
@@ -88,7 +126,7 @@ class Scanner:
             reason = f'Mixed signals: "{misuse}" and "{plausible}" point different ways.'
         else:
             category = Category.NEEDS_CONTEXT
-            reason = "The term appears, and no nearby wording points either way."
+            reason = "The term appears. Only a fixed list of clue phrases is checked nearby, and none was found, so this scanner cannot say more."
         return Match(
             entry=entry,
             text=text[start:end],

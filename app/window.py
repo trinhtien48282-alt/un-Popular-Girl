@@ -10,7 +10,7 @@ from PySide6.QtWidgets import (
 
 from . import __version__
 from .models import Category, Entry, Match
-from .scanner import Scanner
+from .scanner import Scanner, line_col
 
 APP_NAME = "un-Popular Girl"
 IDLE_STATUS = "Consulting the dictionary, not a therapist."
@@ -65,9 +65,11 @@ def _entry_body(e: Entry) -> str:
     )
 
 
-def _match_html(m: Match) -> str:
+def _match_html(m: Match, text_len: int) -> str:
     marker, color = STYLE[m.category]
     flat = lambda s: escape(s.replace("\n", " "))  # noqa: E731
+    cut_left = "\u2026" if m.start > len(m.before) else ""
+    cut_right = "\u2026" if m.end + len(m.after) < text_len else ""
     humor = (
         f"<p><i>{escape(m.entry.humor)}</i></p>"
         if m.entry.humor and m.category is Category.POSSIBLE_MISUSE
@@ -76,7 +78,7 @@ def _match_html(m: Match) -> str:
     return (
         f"<h3>{escape(m.entry.term)}</h3>"
         f'<p><b style="color:{color}">{marker} {m.category.value}</b><br>{escape(m.reason)}</p>'
-        f"<p>\u2026{flat(m.before)}<b>{flat(m.text)}</b>{flat(m.after)}\u2026</p>"
+        f"<p>{cut_left}{flat(m.before)}<b>{flat(m.text)}</b>{flat(m.after)}{cut_right}</p>"
         f"{humor}{_entry_body(m.entry)}"
     )
 
@@ -166,7 +168,7 @@ class MainWindow(QMainWindow):
         inner.addWidget(self.results)
         inner.addWidget(self.detail)
         inner.setStretchFactor(0, 1)
-        inner.setStretchFactor(1, 2)
+        inner.setStretchFactor(1, 3)
 
         right = QWidget()
         right_layout = QVBoxLayout(right)
@@ -204,7 +206,8 @@ class MainWindow(QMainWindow):
         self.results.clear()
         for m in matches:
             marker, color = STYLE[m.category]
-            item = QListWidgetItem(f"{marker} {m.category.value}  |  {m.entry.term}  (char {m.start})")
+            line, col = line_col(text, m.start)
+            item = QListWidgetItem(f"{marker} {m.category.value}  |  {m.entry.term}  (line {line}, col {col})")
             item.setForeground(QColor(color))
             self.results.addItem(item)
         counts = [
@@ -226,7 +229,7 @@ class MainWindow(QMainWindow):
         if not 0 <= row < len(self._matches):
             return
         m = self._matches[row]
-        self.detail.setHtml(_match_html(m))
+        self.detail.setHtml(_match_html(m, len(self._scanned_text)))
         # Highlight in the editor only if the text is unchanged since the scan.
         if self.editor.toPlainText() != self._scanned_text:
             return

@@ -1,4 +1,3 @@
-HEAD
 # un-Popular Girl
 
 A small, fully offline desktop app (Python + PySide6) that flags possibly loose, exaggerated, or oversimplified uses of therapy-related and pop-psychology words, and explains each term accurately and without drama. The explanations are balanced and respectful; the UI copy is allowed a dry sense of humor. The jokes are aimed at word misuse, never at people with mental health difficulties.
@@ -43,6 +42,14 @@ Tests use the standard library `unittest`, need no network, and do not import Qt
 python -m unittest discover -s tests -v
 ```
 
+## Packaging (Windows, PyInstaller `--onedir`, uv)
+
+```
+uv run --with-requirements requirements.txt --with pyinstaller pyinstaller --noconfirm --clean --onedir --windowed --name un-Popular-Girl --add-data "data\terminology.json;data" main.py
+```
+
+The JSON is bundled once, to `dist\un-Popular-Girl\_internal\data\terminology.json`. The app finds it through `resource_path()` in `app/dictionary.py`, which uses `sys._MEIPASS` when frozen and the project root otherwise. Verify: run the exe by full path from a different folder (for example `cd %TEMP%`), then check the Dictionary tab lists 15 entries. Temporarily renaming the JSON should produce an error dialog naming the missing path.
+
 ## Architecture
 
 ```
@@ -75,7 +82,7 @@ There are no scores, no confidence percentages, no machine learning, and no rand
 
 ## Limitations and false positives
 
-This is keyword matching, not language understanding. It cannot see intent, sarcasm, negation ("that is *not* gaslighting"), quotation, or who is speaking. Sentence splitting is naive. It will sometimes flag fine usage and miss real misuse. A clue word is a hint, never proof, and a result never says anything about a person's experience, intent, or mental state.
+This is keyword matching, not language understanding. It cannot see intent, sarcasm, quotation, or who is speaking. Negation is handled by one narrow rule (a cue such as "wasn't" or "don't think" within five words before the term, with no "but"/"later"-style contrast), which misses many phrasings ("I doubt that was gaslighting") and can misfire ("I am not sure he is gaslighting me"). Sentence splitting is naive. It will sometimes flag fine usage and miss real misuse. A clue word is a hint, never proof, and a result never says anything about a person's experience, intent, or mental state.
 
 ## Offline guarantees
 
@@ -106,4 +113,3 @@ The file is validated at startup; a problem produces an error naming the entry a
 ## Source notes
 
 The reference URLs were written without internet access in the build environment and have not been opened to verify them. Please click through each one once before publishing. Entries with no single authoritative source (for example Love bombing, Boundaries, Trauma dumping) say so rather than invent one.
-

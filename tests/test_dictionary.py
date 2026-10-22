@@ -1,9 +1,13 @@
 import json
+import os
+import shutil
+import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
-from app.dictionary import DictionaryError, load_entries
+from app.dictionary import DEFAULT_PATH, DictionaryError, load_entries, resource_path
 
 EXPECTED_TERMS = {
     "Gaslighting", "Narcissist", "Toxic", "Trauma", "Triggered", "Red flag",
@@ -34,6 +38,39 @@ class BundledDictionary(unittest.TestCase):
     def test_every_entry_has_examples_and_patterns(self):
         for e in load_entries():
             self.assertTrue(e.misuse_examples and e.legitimate_examples and e.patterns, e.id)
+
+
+class ResourcePath(unittest.TestCase):
+    def test_source_mode_points_at_repo_data_file(self):
+        self.assertTrue(DEFAULT_PATH.is_file(), DEFAULT_PATH)
+        self.assertTrue(DEFAULT_PATH.is_absolute())
+
+    def test_source_mode_ignores_working_directory(self):
+        old = os.getcwd()
+        with tempfile.TemporaryDirectory() as elsewhere:
+            os.chdir(elsewhere)
+            try:
+                self.assertEqual(len(load_entries(resource_path("data", "terminology.json"))), 15)
+            finally:
+                os.chdir(old)
+
+    def test_frozen_mode_uses_meipass_not_module_location(self):
+        # Simulates PyInstaller --onedir: data under <dist>/_internal/data/.
+        with tempfile.TemporaryDirectory() as tmp:
+            internal = Path(tmp) / "dist" / "app" / "_internal"
+            (internal / "data").mkdir(parents=True)
+            shutil.copy(DEFAULT_PATH, internal / "data" / "terminology.json")
+            with mock.patch.object(sys, "frozen", True, create=True), \
+                 mock.patch.object(sys, "_MEIPASS", str(internal), create=True):
+                path = resource_path("data", "terminology.json")
+                self.assertEqual(path, internal / "data" / "terminology.json")
+                self.assertEqual(len(load_entries(path)), 15)
+
+    def test_frozen_mode_missing_file_gives_useful_error(self):
+        with tempfile.TemporaryDirectory() as tmp, \
+             mock.patch.object(sys, "_MEIPASS", tmp, create=True):
+            with self.assertRaisesRegex(DictionaryError, "not found"):
+                load_entries(resource_path("data", "terminology.json"))
 
 
 class MalformedData(unittest.TestCase):
