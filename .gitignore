@@ -3,9 +3,6 @@ __pycache__/
 *.py[cod]
 build/
 dist/
+.spec
 *.spec
 .pytest_cache/
-.ruff_cache/
-.idea/
-.vscode/
-.env
