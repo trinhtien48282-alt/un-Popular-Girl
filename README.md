@@ -1,3 +1,4 @@
+HEAD
 # un-Popular Girl
 
 A small, fully offline desktop app (Python + PySide6) that flags possibly loose, exaggerated, or oversimplified uses of therapy-related and pop-psychology words, and explains each term accurately and without drama. The explanations are balanced and respectful; the UI copy is allowed a dry sense of humor. The jokes are aimed at word misuse, never at people with mental health difficulties.
@@ -105,3 +106,4 @@ The file is validated at startup; a problem produces an error naming the entry a
 ## Source notes
 
 The reference URLs were written without internet access in the build environment and have not been opened to verify them. Please click through each one once before publishing. Entries with no single authoritative source (for example Love bombing, Boundaries, Trauma dumping) say so rather than invent one.
+
