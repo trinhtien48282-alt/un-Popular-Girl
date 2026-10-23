@@ -1,0 +1,122 @@
+term,text,label,review_status
+Gaslighting,He disagreed with me about the movie ending. That's gaslighting.,POSSIBLE MISUSE,reviewed
+Gaslighting,She lied once about being late. Total gaslighting.,POSSIBLE MISUSE,reviewed
+Gaslighting,"Over several months, my partner kept denying conversations we both took part in and insisted I was imagining things, until I stopped trusting my memory.",PLAUSIBLE USAGE,reviewed
+Gaslighting,In psychology class we compared gaslighting with ordinary disagreement.,PLAUSIBLE USAGE,reviewed
+Narcissist,My coworker took the last coffee. What a narcissist.,POSSIBLE MISUSE,reviewed
+Narcissist,"He posts a lot of selfies, so he's a narcissist.",POSSIBLE MISUSE,reviewed
+Narcissist,My psychology textbook lists the criteria for narcissistic personality disorder.,PLAUSIBLE USAGE,reviewed
+Narcissist,A clinician explained the difference between narcissistic traits and the disorder.,PLAUSIBLE USAGE,reviewed
+Toxic,"My friend disagreed with me, so she's toxic.",POSSIBLE MISUSE,reviewed
+Toxic,Anyone who doesn't reply right away is toxic.,POSSIBLE MISUSE,reviewed
+Toxic,The factory was fined for dumping toxic waste.,PLAUSIBLE USAGE,reviewed
+Toxic,"The group chat was full of constant put-downs and threats, which made it a toxic environment for me.",PLAUSIBLE USAGE,reviewed
+Trauma,The wifi dropped during my meeting. I have trauma now.,POSSIBLE MISUSE,reviewed
+Trauma,Waiting in line for ten minutes gave me trauma.,POSSIBLE MISUSE,reviewed
+Trauma,Therapy helped me work through trauma from a car accident.,PLAUSIBLE USAGE,reviewed
+Trauma,The emergency department treats blunt force trauma.,PLAUSIBLE USAGE,reviewed
+Triggered,"That meme triggered me, lol.",NEEDS CONTEXT,needs_review
+Triggered,I get so triggered when people chew loudly.,NEEDS CONTEXT,needs_review
+Triggered,The smell of smoke triggered a panic response linked to the fire I survived.,PLAUSIBLE USAGE,reviewed
+Triggered,The article had a trigger warning at the top.,PLAUSIBLE USAGE,reviewed
+Red flag,He likes a different sports team than I do. Red flag.,NEEDS CONTEXT,needs_review
+Red flag,She takes a long time to answer texts. Huge red flag.,NEEDS CONTEXT,needs_review
+Red flag,"He kept pressuring me to cut off my friends, which was a real red flag.",PLAUSIBLE USAGE,reviewed
+Red flag,The contract had several red flags that our lawyer pointed out.,PLAUSIBLE USAGE,reviewed
+Love bombing,"He texted me good morning, so that's love bombing.",POSSIBLE MISUSE,reviewed
+Love bombing,She said she liked me on the second date. Love bombing.,POSSIBLE MISUSE,reviewed
+Love bombing,"He showered me with gifts and constant attention, then became cold and controlling when I wanted time with friends.",PLAUSIBLE USAGE,reviewed
+Love bombing,We discussed the idea of love bombing in a workshop on healthy relationships.,PLAUSIBLE USAGE,reviewed
+Manipulative,She asked me to help her move. So manipulative.,POSSIBLE MISUSE,reviewed
+Manipulative,He convinced me to try sushi. Manipulative.,POSSIBLE MISUSE,reviewed
+Manipulative,He lied about money and used guilt-trips to pressure me into signing.,PLAUSIBLE USAGE,reviewed
+Manipulative,The marketing course covered manipulative sales tactics and how to spot them.,PLAUSIBLE USAGE,reviewed
+Boundaries,My boundary is that you can't talk to your friends anymore.,POSSIBLE MISUSE,reviewed
+Boundaries,Boundaries mean you have to do what I say.,POSSIBLE MISUSE,reviewed
+Boundaries,"I told her I won't lend money, and that I'd end the call if the shouting continued.",PLAUSIBLE USAGE,reviewed
+Boundaries,The survey marked the property boundaries.,PLAUSIBLE USAGE,reviewed
+Toxic positivity,My friend was happy for me when I got the job. Toxic positivity.,POSSIBLE MISUSE,reviewed
+Toxic positivity,Anyone who is optimistic is toxic positivity.,POSSIBLE MISUSE,reviewed
+Toxic positivity,"When I said I was grieving, he just said 'good vibes only' and changed the subject.",PLAUSIBLE USAGE,reviewed
+Toxic positivity,We discussed how toxic positivity can shut down honest conversation.,PLAUSIBLE USAGE,reviewed
+Emotional damage,He took the last fries. That's emotional damage.,NEEDS CONTEXT,needs_review
+Emotional damage,"My team lost. Emotional damage, lol.",NEEDS CONTEXT,needs_review
+Emotional damage,"Years of verbal abuse caused her real emotional harm, and she is working through it in therapy.",PLAUSIBLE USAGE,reviewed
+Emotional damage,"Someone shouted 'emotional damage' after the joke, and everyone laughed.",PLAUSIBLE USAGE,reviewed
+Attachment issues,"He texts me a lot, so he has attachment issues.",POSSIBLE MISUSE,reviewed
+Attachment issues,"She's clingy, which means attachment issues.",POSSIBLE MISUSE,reviewed
+Attachment issues,My therapist explained how my anxious attachment style developed from my early childhood.,PLAUSIBLE USAGE,reviewed
+Attachment issues,The seminar covered attachment theory and reactive attachment disorder.,PLAUSIBLE USAGE,reviewed
+Gaslight,"He disagreed with me, so he's trying to gaslight me.",POSSIBLE MISUSE,reviewed
+Gaslight,"She forgot our plan, and now she's gaslighting me.",POSSIBLE MISUSE,reviewed
+Gaslight,"He would gaslight me by denying things he said, until I second-guessed my memory over time.",PLAUSIBLE USAGE,reviewed
+Gaslight,The article explains what it means to gaslight someone and how to recognize it.,PLAUSIBLE USAGE,reviewed
+Narcissistic abuse,He argued with me about dinner. Narcissistic abuse.,POSSIBLE MISUSE,reviewed
+Narcissistic abuse,She was rude once. That's narcissistic abuse.,POSSIBLE MISUSE,reviewed
+Narcissistic abuse,"She described years of manipulation and put-downs in her relationship, and later joined a support group for survivors.",PLAUSIBLE USAGE,reviewed
+Narcissistic abuse,The article discussed narcissistic abuse and why the term is debated.,PLAUSIBLE USAGE,reviewed
+Trauma dumping,My friend told me she had a bad week. Trauma dumping.,POSSIBLE MISUSE,reviewed
+Trauma dumping,"Any time someone vents, it's trauma dumping.",POSSIBLE MISUSE,reviewed
+Trauma dumping,A new acquaintance unloaded years of painful details on me within minutes and never asked whether I had the energy to listen.,PLAUSIBLE USAGE,reviewed
+Trauma dumping,We talked about how to check in before sharing something heavy.,PLAUSIBLE USAGE,reviewed
+Gaslighting,"He disagreed with me, that's gaslighting.",POSSIBLE MISUSE,reviewed
+Gaslighting,"He didn’t text back, that's gaslighting.",POSSIBLE MISUSE,reviewed
+Gaslighting,"My brother said I was wrong about the movie's ending, so he's gaslighting me.",POSSIBLE MISUSE,reviewed
+Gaslighting,"He disagreed with me about the movie ending, so he's gaslighting me.",POSSIBLE MISUSE,reviewed
+Gaslighting,He disagreed with me about the movie. That's gaslighting.,POSSIBLE MISUSE,reviewed
+Gaslighting,He was gaslighting me about the movie.,POSSIBLE MISUSE,reviewed
+Gaslighting,He wasn't rude but he was gaslighting me about the movie ending.,POSSIBLE MISUSE,reviewed
+Gaslight,"She argued about dinner, so she tried to gaslight me.",POSSIBLE MISUSE,reviewed
+Trauma,My therapist helped me process trauma after the accident.,PLAUSIBLE USAGE,reviewed
+Toxic,The factory dumped toxic waste.,PLAUSIBLE USAGE,reviewed
+Gaslighting,"He denied it happened and made me doubt my memory, which is gaslighting.",PLAUSIBLE USAGE,reviewed
+Gaslighting,"He repeatedly denied it happened and made me doubt myself, which is gaslighting.",PLAUSIBLE USAGE,reviewed
+Gaslighting,"He wasn't gaslighting me at first, but later repeatedly denied conversations we'd both had and insisted I was imagining things.",PLAUSIBLE USAGE,reviewed
+Gaslighting,"For months, he repeatedly denied conversations we'd both had and insisted I was imagining things. That's gaslighting.",PLAUSIBLE USAGE,reviewed
+Gaslighting,In psychology class we learned what gaslighting means.,PLAUSIBLE USAGE,reviewed
+Gaslighting,"He kept denying it, again and again, and made me doubt my memory. He is gaslighting me.",PLAUSIBLE USAGE,reviewed
+Trauma,Trauma.,NEEDS CONTEXT,reviewed
+Gaslighting,"He disagreed with me and kept saying it never happened, which is gaslighting.",NEEDS CONTEXT,reviewed
+Gaslighting,He disagreed with me. Later I felt gaslighting was too strong a word.,NEEDS CONTEXT,reviewed
+Gaslighting,My brother wasn't gaslighting me; we simply remembered the movie differently.,NEEDS CONTEXT,reviewed
+Gaslighting,"He wasn’t gaslighting me, just disagreeing about the movie.",NEEDS CONTEXT,reviewed
+Gaslighting,I don't think that was gaslighting.,NEEDS CONTEXT,reviewed
+Gaslighting,He was gaslighting me.,NEEDS CONTEXT,reviewed
+Gaslighting,He wasn't gaslighting me.,NEEDS CONTEXT,reviewed
+Gaslighting,He wasn't rude but he was gaslighting me about the movie.,NEEDS CONTEXT,reviewed
+Gaslighting,We watched the movie. That's gaslighting.,NEEDS CONTEXT,reviewed
+Gaslighting,He repeatedly denied it happened and made me doubt myself. That wasn't gaslighting.,NEEDS CONTEXT,reviewed
+Gaslighting,"He wasn't gaslighting me about the movie ending at first, but then he apologised.",NEEDS CONTEXT,reviewed
+Gaslighting,That's gaslighting. He repeatedly denied it happened and made me doubt myself.,NEEDS CONTEXT,reviewed
+Narcissist,"He cut in line at the cafe, what a narcissist.",POSSIBLE MISUSE,needs_review
+Narcissist,The psychologist explained that narcissistic personality disorder can only be diagnosed by a professional.,PLAUSIBLE USAGE,needs_review
+Narcissist,My sister called her ex a narcissist.,NEEDS CONTEXT,needs_review
+Toxic,"She stopped talking to me because we disagreed about politics, so I called her toxic.",POSSIBLE MISUSE,needs_review
+Toxic,The report found toxic fumes in the warehouse after the spill.,PLAUSIBLE USAGE,needs_review
+Toxic,Some people say that workplace was toxic.,NEEDS CONTEXT,needs_review
+Trauma,"Missing the bus gave me trauma, honestly.",POSSIBLE MISUSE,needs_review
+Trauma,"After the earthquake, many survivors worked through trauma with counselors.",PLAUSIBLE USAGE,needs_review
+Trauma,He joked about his childhood trauma.,NEEDS CONTEXT,needs_review
+Love bombing,"She sent a nice text this morning, so it's love bombing.",POSSIBLE MISUSE,needs_review
+Love bombing,"He showered me with gifts every day for weeks, then turned cold the moment I set a limit, and it happened every time.",PLAUSIBLE USAGE,needs_review
+Love bombing,My friend thinks he was love bombing her.,NEEDS CONTEXT,needs_review
+Manipulative,My mom asked me to call more often. She is so manipulative.,POSSIBLE MISUSE,needs_review
+Manipulative,"He threatened to leave unless I signed, and he lied to get his way repeatedly; it was manipulative.",PLAUSIBLE USAGE,needs_review
+Manipulative,Is that manipulative or just persuasive? Hard to say.,NEEDS CONTEXT,needs_review
+Boundaries,"You have to quit your job, those are my boundaries.",POSSIBLE MISUSE,needs_review
+Boundaries,I set a boundary: I will leave the room if people start shouting.,PLAUSIBLE USAGE,needs_review
+Toxic positivity,Her coworker was cheerful and encouraging all day. Toxic positivity.,POSSIBLE MISUSE,needs_review
+Toxic positivity,"When I was grieving, she said 'look on the bright side' and changed the subject; that was toxic positivity.",PLAUSIBLE USAGE,needs_review
+Trauma dumping,"My friend vented about a bad day, which is trauma dumping.",POSSIBLE MISUSE,needs_review
+Trauma dumping,A stranger on the train described graphic details of his past without asking whether I wanted to hear them. That felt like trauma dumping.,PLAUSIBLE USAGE,needs_review
+Attachment issues,"She texts me goodnight every day, she must have attachment issues.",POSSIBLE MISUSE,needs_review
+Narcissistic abuse,A forum post argues that narcissistic abuse is not a clinical term.,NEEDS CONTEXT,needs_review
+Gaslighting,"For the first few months everything seemed fine. Then my partner began to deny things he had said, told me I was imagining things, and over time I started to doubt my own memory. Looking back, I think that was gaslighting, and I am talking to a therapist about it.",PLAUSIBLE USAGE,needs_review
+Gaslighting,"Last night we had a long chat about where to eat. He wanted pizza and I wanted sushi, we argued a bit, and I told my roommate he was gaslighting me. We still went to dinner together.",POSSIBLE MISUSE,needs_review
+Gaslighting,"The post said ""that's gaslighting"" and nothing else.",NEEDS CONTEXT,needs_review
+Gaslighting,"Lecture notes: gaslighting is defined by repeated denial of reality, unlike a single disagreement.",PLAUSIBLE USAGE,needs_review
+Gaslight,Does forgetting a birthday count as trying to gaslight someone?,NEEDS CONTEXT,needs_review
+Red flag,He replied late once. Red flag.,NEEDS CONTEXT,needs_review
+Triggered,The siren triggered a flashback for the veteran.,PLAUSIBLE USAGE,needs_review
+Triggered,I was so triggered by that tweet.,NEEDS CONTEXT,needs_review
+Emotional damage,Lost at chess. Emotional damage.,NEEDS CONTEXT,needs_review
