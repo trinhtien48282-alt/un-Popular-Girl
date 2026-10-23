@@ -150,11 +150,22 @@ class ScannerTests(unittest.TestCase):
                 "we'd both had and insisted I was imagining things.")
         m = self.scanner.scan(text)[0]
         self.assertEqual(m.category, Category.PLAUSIBLE_USAGE)
-        self.assertNotIn("negation", m.reason)
+        self.assertIn("set aside", m.reason)
+        self.assertIn("repeatedly", m.reason)
 
-    def test_contrast_before_term_cancels_negation(self):
+    def test_contrast_is_conservative_one_clue_is_not_enough(self):
         m = self.scanner.scan("He wasn't rude but he was gaslighting me about the movie.")[0]
-        self.assertEqual(m.category, Category.POSSIBLE_MISUSE)
+        self.assertEqual(m.category, Category.NEEDS_CONTEXT)
+        self.assertIn("Only one clue", m.reason)
+        two = self.scanner.scan("He wasn't rude but he was gaslighting me about the movie ending.")[0]
+        self.assertEqual(two.category, Category.POSSIBLE_MISUSE)  # "movie" + "ending"
+
+    def test_only_text_after_contrast_counts_as_evidence(self):
+        # "movie"/"ending" sit before the contrast and must not count.
+        text = "He wasn't gaslighting me about the movie ending at first, but then he apologised."
+        m = self.scanner.scan(text)[0]
+        self.assertEqual(m.category, Category.NEEDS_CONTEXT)
+        self.assertNotIn("movie", m.reason)
 
     def test_far_or_clause_separated_negation_is_ignored(self):
         for text in (
@@ -163,6 +174,66 @@ class ScannerTests(unittest.TestCase):
             "It was not a good week and honestly the way he talks is just gaslighting about the movie.",
         ):
             self.assertNotIn("negation", self.scanner.scan(text)[0].reason, text)
+
+    # --- context window: borrowing from the previous sentence -------------
+    def test_examples_from_the_audit(self):
+        a = self.scanner.scan("I don't think that was gaslighting.")[0]
+        self.assertEqual(a.category, Category.NEEDS_CONTEXT)
+        self.assertIn("negation", a.reason)
+        b = self.scanner.scan(
+            "He wasn't gaslighting me at first, but later repeatedly denied conversations "
+            "we'd both had and insisted I was imagining things.")[0]
+        self.assertEqual(b.category, Category.PLAUSIBLE_USAGE)
+        self.assertIn("imagining things", b.reason)
+        c = self.scanner.scan(
+            "For months, he repeatedly denied conversations we'd both had and insisted "
+            "I was imagining things. That's gaslighting.")[0]
+        self.assertEqual(c.category, Category.PLAUSIBLE_USAGE)
+        self.assertIn("sentence before it", c.reason)
+
+    def test_ordinary_disagreement(self):
+        same = self.scanner.scan("He disagreed with me about the movie ending, so he's gaslighting me.")[0]
+        self.assertEqual(same.category, Category.POSSIBLE_MISUSE)
+        split = self.scanner.scan("He disagreed with me about the movie. That's gaslighting.")[0]
+        self.assertEqual(split.category, Category.POSSIBLE_MISUSE)
+        self.assertIn("sentence before it", split.reason)
+
+    def test_educational_mention(self):
+        m = self.scanner.scan("In psychology class we learned what gaslighting means.")[0]
+        self.assertEqual(m.category, Category.PLAUSIBLE_USAGE)
+        mixed = self.scanner.scan("In psychology class we compared gaslighting with ordinary disagreement.")[0]
+        self.assertNotEqual(mixed.category, Category.POSSIBLE_MISUSE)
+
+    def test_simple_negation(self):
+        m = self.scanner.scan("He wasn't gaslighting me.")[0]
+        self.assertEqual(m.category, Category.NEEDS_CONTEXT)
+        self.assertIn("negation", m.reason)
+
+    def test_repeated_pattern_accusation_across_sentences(self):
+        text = "He kept denying it, again and again, and made me doubt my memory. He is gaslighting me."
+        self.assertEqual(self.scanner.scan(text)[0].category, Category.PLAUSIBLE_USAGE)
+
+    def test_borrowed_context_needs_two_clues(self):
+        m = self.scanner.scan("We watched the movie. That's gaslighting.")[0]
+        self.assertEqual(m.category, Category.NEEDS_CONTEXT)
+        self.assertIn("Only one clue", m.reason)
+
+    def test_no_borrowing_across_line_break_or_for_long_sentences(self):
+        evidence = "He repeatedly denied it happened and made me doubt myself"
+        for text in (
+            evidence + ".\nThat's gaslighting.",
+            evidence + ". I really do think that what he did there was gaslighting.",
+            "That's gaslighting. " + evidence + ".",  # never borrows from the sentence after
+        ):
+            m = self.scanner.scan(text)[0]
+            self.assertEqual(m.category, Category.NEEDS_CONTEXT, text)
+            self.assertNotIn("sentence before it", m.reason, text)
+
+    def test_negated_short_sentence_does_not_borrow(self):
+        text = "He repeatedly denied it happened and made me doubt myself. That wasn't gaslighting."
+        m = self.scanner.scan(text)[0]
+        self.assertEqual(m.category, Category.NEEDS_CONTEXT)
+        self.assertIn("negation", m.reason)
 
     def test_deterministic(self):
         text = "Toxic positivity, trauma dumping, a red flag, and gaslighting. Toxic!"

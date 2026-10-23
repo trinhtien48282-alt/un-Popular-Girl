@@ -70,7 +70,7 @@ The scanner never imports Qt, so it can be tested and reused on its own.
 
 1. **Find terms.** Each entry lists detection phrases. They are matched case-insensitively with word boundaries, so `toxic` does not match `toxicology`. Spaces and hyphens inside a phrase are interchangeable (`love bombing` = `love-bombing`).
 2. **Resolve overlaps.** The longest match wins, so `toxic positivity` is reported once, as Toxic positivity, not also as Toxic.
-3. **Check nearby clues.** Within the same sentence, each entry's clue phrases are checked:
+3. **Check nearby clues.** In the term's own sentence, each entry's clue phrases are checked (a short sentence like "That's gaslighting." may also borrow the sentence right before it, but then needs two clues; a negation such as "wasn't" before the term marks it as denied unless a contrast word like "but" is nearby, in which case two clues are required):
    - only a *misuse clue* found: `POSSIBLE MISUSE`
    - only a *plausible clue* found: `PLAUSIBLE USAGE`
    - both, or neither: `NEEDS CONTEXT` (the default for a bare match)
