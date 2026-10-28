@@ -41,3 +41,25 @@ Model files are pickles (joblib): only load ones you trained.
 - Evaluate a `min_confidence` value before using one.
 - Decide how ML and scanner disagreements are shown.
 - Add scikit-learn to `requirements.txt` and the PyInstaller command (not done: the GUI does not use it).
+
+## Trying it: `scripts/predict_classifier.py`
+
+```powershell
+uv run python -m scripts.predict_classifier --term Gaslighting --text "He disagreed with me. That's gaslighting."
+uv run python -m scripts.predict_classifier --term Toxic --text "..." --term Trauma --text "..."   # several, paired in order
+uv run python -m scripts.predict_classifier --file examples.csv                                    # columns: term,text
+uv run python -m scripts.predict_classifier --file data\heldout_examples.csv                       # predictions only, no scoring
+uv run python -m scripts.predict_classifier --evaluate                                             # held-out evaluation
+```
+
+Output is model scores, not a chance of being right. Each example also says whether it is near-identical (similarity >= 0.6) to a reviewed training row: `SEEN IN TRAINING` or `not in training`. That check reads `data/training_examples.csv`, not the model file, so it assumes the model was trained from that CSV.
+
+### Held-out evaluation
+
+`data/heldout_examples.csv` holds 21 candidate rows (negation, academic discussion, ordinary disagreement, sustained pattern, ambiguous or quoted wording, one longer passage). All are `needs_review`: I wrote them and the labels are my guess. None is near-identical to a training row (max similarity 0.38 at the time of writing).
+`--evaluate` scores only `reviewed` rows, and drops any that are near-identical to a reviewed training row. It exits with an error until you review rows (set `review_status` to `reviewed` after reading and fixing the label). Do not copy held-out rows into the training CSV and then still call them held out.
+Word overlap is a crude leakage check: it catches rephrasings and repeats, not sentences on the same theme.
+
+## Candidate examples
+
+To reduce hand-writing, see `docs/CANDIDATE_WORKFLOW.md` (`scripts/generate_candidates.py` and `scripts/promote_candidates.py`). Generated rows are always `needs_review` and are never trained on until you approve them.

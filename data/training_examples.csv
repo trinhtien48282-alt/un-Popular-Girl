@@ -64,8 +64,8 @@ Gaslighting,"He didn’t text back, that's gaslighting.",POSSIBLE MISUSE,reviewe
 Gaslighting,"My brother said I was wrong about the movie's ending, so he's gaslighting me.",POSSIBLE MISUSE,reviewed
 Gaslighting,"He disagreed with me about the movie ending, so he's gaslighting me.",POSSIBLE MISUSE,reviewed
 Gaslighting,He disagreed with me about the movie. That's gaslighting.,POSSIBLE MISUSE,reviewed
-Gaslighting,He was gaslighting me about the movie.,POSSIBLE MISUSE,reviewed
-Gaslighting,He wasn't rude but he was gaslighting me about the movie ending.,POSSIBLE MISUSE,reviewed
+Gaslighting,He was gaslighting me about the movie.,NEEDS CONTEXT,reviewed
+Gaslighting,He wasn't rude but he was gaslighting me about the movie ending.,NEEDS CONTEXT,reviewed
 Gaslight,"She argued about dinner, so she tried to gaslight me.",POSSIBLE MISUSE,reviewed
 Trauma,My therapist helped me process trauma after the accident.,PLAUSIBLE USAGE,reviewed
 Toxic,The factory dumped toxic waste.,PLAUSIBLE USAGE,reviewed
@@ -87,7 +87,7 @@ Gaslighting,He wasn't rude but he was gaslighting me about the movie.,NEEDS CONT
 Gaslighting,We watched the movie. That's gaslighting.,NEEDS CONTEXT,reviewed
 Gaslighting,He repeatedly denied it happened and made me doubt myself. That wasn't gaslighting.,NEEDS CONTEXT,reviewed
 Gaslighting,"He wasn't gaslighting me about the movie ending at first, but then he apologised.",NEEDS CONTEXT,reviewed
-Gaslighting,That's gaslighting. He repeatedly denied it happened and made me doubt myself.,NEEDS CONTEXT,reviewed
+Gaslighting,That's gaslighting. He repeatedly denied it happened and made me doubt myself.,PLAUSIBLE USAGE,reviewed
 Narcissist,"He cut in line at the cafe, what a narcissist.",POSSIBLE MISUSE,needs_review
 Narcissist,The psychologist explained that narcissistic personality disorder can only be diagnosed by a professional.,PLAUSIBLE USAGE,needs_review
 Narcissist,My sister called her ex a narcissist.,NEEDS CONTEXT,needs_review
@@ -120,3 +120,6 @@ Red flag,He replied late once. Red flag.,NEEDS CONTEXT,needs_review
 Triggered,The siren triggered a flashback for the veteran.,PLAUSIBLE USAGE,needs_review
 Triggered,I was so triggered by that tweet.,NEEDS CONTEXT,needs_review
 Emotional damage,Lost at chess. Emotional damage.,NEEDS CONTEXT,needs_review
+Toxic,"Her last job was toxic, she says, but she did not explain what happened.",NEEDS CONTEXT,reviewed
+Triggered,"He said he got triggered at the meeting, which could mean anything from irritation to something much heavier.",NEEDS CONTEXT,reviewed
+Trauma dumping,"Someone on the forum accused her of trauma dumping, but I can't tell whether anyone had agreed to listen.",NEEDS CONTEXT,reviewed

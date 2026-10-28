@@ -1,0 +1,22 @@
+term,text,label,review_status
+Gaslighting,I never said he was gaslighting me; I just said we remember that night differently.,NEEDS CONTEXT,needs_review
+Toxic,"It wasn't toxic, just a loud office with a lot of deadlines.",NEEDS CONTEXT,needs_review
+Manipulative,"She isn't manipulative, she just asked me for help twice.",NEEDS CONTEXT,needs_review
+Trauma,He did not have trauma from the traffic jam; he was only annoyed.,NEEDS CONTEXT,needs_review
+Narcissist,In abnormal psychology we studied how clinicians distinguish narcissistic traits from the personality disorder.,PLAUSIBLE USAGE,needs_review
+Love bombing,"The seminar defined love bombing as excessive affection used to gain control, and covered why researchers dispute the term.",PLAUSIBLE USAGE,needs_review
+Boundaries,"Our counselling textbook says a boundary describes what you will do, not what another person may do.",PLAUSIBLE USAGE,needs_review
+Gaslight,"My roommate thinks the soup needs salt and I don't, so apparently he's trying to gaslight me.",POSSIBLE MISUSE,needs_review
+Toxic,"My cousin picked a different restaurant than I wanted, which makes her toxic.",POSSIBLE MISUSE,needs_review
+Narcissistic abuse,"He disagreed with my playlist choice. Narcissistic abuse, clearly.",POSSIBLE MISUSE,needs_review
+Manipulative,She said no to lending me her charger and I think that's manipulative.,POSSIBLE MISUSE,needs_review
+Manipulative,"Over two years he lied about money, guilt-tripped me whenever I asked questions, and threatened to leave, and it was manipulative.",PLAUSIBLE USAGE,needs_review
+Gaslighting,"Every week for a year she denied saying things I had heard her say, until I began to doubt my own memory. That is what I mean by gaslighting.",PLAUSIBLE USAGE,needs_review
+Trauma dumping,"Every time we met, a colleague unloaded graphic details about his past without asking if I had the capacity, and I think that was trauma dumping.",PLAUSIBLE USAGE,needs_review
+Love bombing,"He sent gifts and called constantly in week one, then pulled away and criticised me whenever I saw friends; looking back, that was love bombing.",PLAUSIBLE USAGE,needs_review
+Red flag,He mentioned his ex a lot. Not sure if that's a red flag.,NEEDS CONTEXT,needs_review
+Toxic positivity,My aunt keeps saying everything happens for a reason; I can't tell if that's toxic positivity or just her way of caring.,NEEDS CONTEXT,needs_review
+Attachment issues,People say he has attachment issues.,NEEDS CONTEXT,needs_review
+Gaslighting,She texted 'stop gaslighting me' but I honestly don't know what she meant.,NEEDS CONTEXT,needs_review
+Trauma,That interview was a trauma.,NEEDS CONTEXT,needs_review
+Triggered,"After the fireworks started, the soldier felt triggered, with a racing heart and flashbacks to the war.",PLAUSIBLE USAGE,needs_review

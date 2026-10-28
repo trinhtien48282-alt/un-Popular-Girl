@@ -114,6 +114,17 @@ def group_ids(texts: list[str], threshold: float = SIMILARITY) -> list[int]:
     return [find(i) for i in range(len(texts))]
 
 
+def closest(text: str, references: list[str]) -> tuple[float, int]:
+    """(best Jaccard similarity, index) of `text` against `references`; (0.0, -1) if none."""
+    a = set(_norm(text).split())
+    best = (0.0, -1)
+    for i, ref in enumerate(references):
+        b = set(_norm(ref).split())
+        if a | b and len(a & b) / len(a | b) > best[0]:
+            best = (len(a & b) / len(a | b), i)
+    return best
+
+
 def check_coverage(labels: list[str], groups: list[int], folds: int) -> None:
     problems = []
     for label in LABELS:
@@ -146,6 +157,37 @@ def evaluate(X: list[str], y: list[str], groups: list[int], folds: int, seed: in
     return pred
 
 
+def coverage_lines(rows: list[dict[str, str]], known_terms: set[str] | None = None) -> list[str]:
+    """Reviewed-row counts per term and label, with gaps called out.
+
+    Counts show where data is absent; they say nothing about whether the data is good.
+    No minimum is applied here: a gap is only a zero.
+    """
+    reviewed = Counter((r["term"], r["label"]) for r in rows if r["review_status"] == REVIEWED)
+    unreviewed = Counter(r["term"] for r in rows if r["review_status"] != REVIEWED)
+    terms = sorted({r["term"] for r in rows} | set(known_terms or ()))
+    width = max([len("term")] + [len(t) for t in terms])
+    out = ["Coverage by term (reviewed rows only; counts show gaps, not data quality):",
+           f"  {'term':{width}}  " + "  ".join(f"{label:>15}" for label in LABELS) + "  unreviewed  gaps"]
+    for t in terms:
+        counts = [reviewed[(t, label)] for label in LABELS]
+        missing = [label for label, c in zip(LABELS, counts) if c == 0]
+        if len(missing) == len(LABELS):
+            gap = "NO REVIEWED ROWS"
+        else:
+            gap = ("no reviewed: " + ", ".join(missing)) if missing else ""
+        out.append(f"  {t:{width}}  " + "  ".join(f"{c:>15}" for c in counts) + f"  {unreviewed[t]:>10}  {gap}")
+    for label in LABELS:
+        by_term = Counter({t: reviewed[(t, label)] for t in terms if reviewed[(t, label)]})
+        total = sum(by_term.values())
+        if total:
+            top, n = by_term.most_common(1)[0]
+            out.append(f"  {label}: {total} reviewed; most rows from one term: {top} ({n} of {total})")
+        else:
+            out.append(f"  {label}: NO reviewed rows")
+    return out
+
+
 def _print_counts(rows: list[dict[str, str]]) -> None:
     counts = Counter((r["label"], r["review_status"]) for r in rows)
     n_rev = sum(r["review_status"] == REVIEWED for r in rows)
@@ -170,6 +212,8 @@ def run(data: Path = DATA_PATH, model: Path = MODEL_PATH, *, seed: int = SEED, f
     rows = load_rows(data)
     validate(rows, known_terms)
     _print_counts(rows)
+    print()
+    print("\n".join(coverage_lines(rows, known_terms)))
     rev = reviewed_rows(rows)
     X = [build_input(r["term"], r["text"]) for r in rev]
     y = [r["label"] for r in rev]

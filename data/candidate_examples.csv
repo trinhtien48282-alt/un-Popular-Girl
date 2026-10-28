@@ -1,0 +1,73 @@
+term,text,label,review_status,suggested_label,context
+Gaslighting,"My sister remembers the trip differently than I do, so I told her she was gaslighting me.",,needs_review,POSSIBLE MISUSE,disagreement
+Gaslighting,Our counselling module separates gaslighting from simple memory errors by looking at repetition and control.,,needs_review,PLAUSIBLE USAGE,academic
+Gaslighting,That mix-up was not gaslighting; we both had the date wrong.,,needs_review,NEEDS CONTEXT,negation
+Gaslighting,"For two years she rewrote what had happened, then said I had misremembered, until I could no longer tell which version was true, and a counsellor named it gaslighting.",,needs_review,PLAUSIBLE USAGE,in-context
+Gaslighting,"A friend told me her manager is gaslighting her, but she has not said what he actually does.",,needs_review,NEEDS CONTEXT,ambiguous
+Narcissist,"My flatmate likes the heating low and I like it warm, so I called him a narcissist for ignoring my comfort.",,needs_review,POSSIBLE MISUSE,disagreement
+Narcissist,The lecture explained why 'narcissist' is an everyday insult while narcissistic personality disorder is a clinical diagnosis.,,needs_review,PLAUSIBLE USAGE,academic
+Narcissist,"He can be selfish at times, but I would not call him a narcissist.",,needs_review,NEEDS CONTEXT,negation
+Narcissist,"After a formal assessment, a psychiatrist diagnosed her father with narcissistic personality disorder.",,needs_review,PLAUSIBLE USAGE,in-context
+Narcissist,"Everyone in the office calls our director a narcissist, though I have never worked with her.",,needs_review,NEEDS CONTEXT,ambiguous
+Toxic,"My roommate wanted pasta and I wanted noodles, and now I'm telling people she's toxic.",,needs_review,POSSIBLE MISUSE,disagreement
+Toxic,The environmental health course lists which toxic substances need special storage.,,needs_review,PLAUSIBLE USAGE,academic
+Toxic,"The break room was cramped and noisy, but it wasn't toxic.",,needs_review,NEEDS CONTEXT,negation
+Toxic,Constant insults and public humiliation from the team lead made that office a toxic place to work.,,needs_review,PLAUSIBLE USAGE,in-context
+Toxic,"Her last job was toxic, she says, but she did not explain what happened.",NEEDS CONTEXT,reviewed,NEEDS CONTEXT,ambiguous
+Trauma,My train was ten minutes late and I joked that the delay gave me trauma.,,needs_review,POSSIBLE MISUSE,disagreement
+Trauma,The psychology reading defines trauma as a response to an overwhelming event and notes that reactions differ between people.,,needs_review,PLAUSIBLE USAGE,academic
+Trauma,"Missing the deadline was stressful, but it wasn't trauma.",,needs_review,NEEDS CONTEXT,negation
+Trauma,"Years after the car crash he still avoided that road, and his therapist treated it as trauma.",,needs_review,PLAUSIBLE USAGE,in-context
+Trauma,My friend mentioned some trauma from that period but did not go into it.,,needs_review,NEEDS CONTEXT,ambiguous
+Triggered,The training manual explains that a trauma survivor may feel triggered by reminders of the event.,,needs_review,PLAUSIBLE USAGE,academic
+Triggered,I wasn't triggered by the film; I just found it boring.,,needs_review,NEEDS CONTEXT,negation
+Triggered,"Every time the alarm sounds he feels triggered into a panic, because it reminds him of the explosion.",,needs_review,PLAUSIBLE USAGE,in-context
+Triggered,"He said he got triggered at the meeting, which could mean anything from irritation to something much heavier.",NEEDS CONTEXT,reviewed,NEEDS CONTEXT,ambiguous
+Red flag,The compliance course teaches staff to spot red flags such as unusual payment requests.,,needs_review,PLAUSIBLE USAGE,academic
+Red flag,Texting late at night is not a red flag in itself.,,needs_review,NEEDS CONTEXT,negation
+Red flag,"He told her to delete her friends' numbers and tracked her location, and her sister called those red flags.",,needs_review,PLAUSIBLE USAGE,in-context
+Red flag,My friend said the date had a red flag but would not say what it was.,,needs_review,NEEDS CONTEXT,ambiguous
+Love bombing,"She sent me a sweet message after our first coffee, and my friend immediately said it was love bombing.",,needs_review,POSSIBLE MISUSE,disagreement
+Love bombing,Our relationships module describes love bombing as intense affection used to gain control and notes the term is popular rather than clinical.,,needs_review,PLAUSIBLE USAGE,academic
+Love bombing,"He is affectionate and a bit eager, but I wouldn't say it's love bombing.",,needs_review,NEEDS CONTEXT,negation
+Love bombing,"She was showered with gifts and constant messages for a month, then he turned cold and critical whenever she saw friends, which she later called love bombing.",,needs_review,PLAUSIBLE USAGE,in-context
+Love bombing,"People online keep calling his early enthusiasm love bombing, but I can't tell from what they have described.",,needs_review,NEEDS CONTEXT,ambiguous
+Manipulative,My brother asked to borrow my charger and I told him he was being manipulative.,,needs_review,POSSIBLE MISUSE,disagreement
+Manipulative,The ethics seminar compared manipulative persuasion with honest argument.,,needs_review,PLAUSIBLE USAGE,academic
+Manipulative,"She pushed hard for her idea in the meeting, but she wasn't manipulative about it.",,needs_review,NEEDS CONTEXT,negation
+Manipulative,"He lied about the debt, threatened to leave, and made her feel guilty whenever she asked questions, which was manipulative.",,needs_review,PLAUSIBLE USAGE,in-context
+Manipulative,"Some of my coworkers find the new supervisor manipulative, though I haven't seen it myself.",,needs_review,NEEDS CONTEXT,ambiguous
+Boundaries,My boundaries are that you have to answer my calls straight away.,,needs_review,POSSIBLE MISUSE,disagreement
+Boundaries,"In the counselling course we learned that boundaries describe what a person will do, not what they can make someone else do.",,needs_review,PLAUSIBLE USAGE,academic
+Boundaries,Saying no to a plan is not violating anyone's boundaries.,,needs_review,NEEDS CONTEXT,negation
+Boundaries,"She told him she would leave the room whenever the shouting started, and she kept to those boundaries.",,needs_review,PLAUSIBLE USAGE,in-context
+Boundaries,"My manager says she respects boundaries, but I'm not sure what that means in practice here.",,needs_review,NEEDS CONTEXT,ambiguous
+Toxic positivity,"My colleague cheered me on after I finished the project, and I called it toxic positivity.",,needs_review,POSSIBLE MISUSE,disagreement
+Toxic positivity,The wellbeing article discusses toxic positivity and why dismissing difficult feelings can make people less willing to talk.,,needs_review,PLAUSIBLE USAGE,academic
+Toxic positivity,"Her encouragement was warm and she listened first, so it wasn't toxic positivity.",,needs_review,NEEDS CONTEXT,negation
+Toxic positivity,"When I said my mother was ill, he told me to stay positive and not dwell on it, and that was toxic positivity.",,needs_review,PLAUSIBLE USAGE,in-context
+Toxic positivity,"A friend called the office motivational posters toxic positivity, but nobody seemed bothered by them.",,needs_review,NEEDS CONTEXT,ambiguous
+Emotional damage,The module on abuse explains that sustained mistreatment can cause real emotional damage.,,needs_review,PLAUSIBLE USAGE,academic
+Emotional damage,"A rude comment stung for a moment, but it was not emotional damage.",,needs_review,NEEDS CONTEXT,negation
+Emotional damage,"After years of constant criticism at home, she described the lasting emotional damage in her sessions.",,needs_review,PLAUSIBLE USAGE,in-context
+Emotional damage,"He joked that losing the match was emotional damage, though he did seem genuinely down.",,needs_review,NEEDS CONTEXT,ambiguous
+Attachment issues,"My date texted twice in one afternoon, and my friend said he must have attachment issues.",,needs_review,POSSIBLE MISUSE,disagreement
+Attachment issues,"The developmental psychology reading explains that 'attachment issues' is not a diagnosis, whereas attachment theory is a research framework.",,needs_review,PLAUSIBLE USAGE,academic
+Attachment issues,"He likes to stay in touch, but that doesn't mean he has attachment issues.",,needs_review,NEEDS CONTEXT,negation
+Attachment issues,"The clinic assessed the child after severe early neglect, and the report recorded serious attachment issues.",,needs_review,PLAUSIBLE USAGE,in-context
+Attachment issues,"People keep saying my cousin has attachment issues, but they only seem to mean he is shy about relationships.",,needs_review,NEEDS CONTEXT,ambiguous
+Gaslight,"When I said the film was too long, my cousin accused me of trying to gaslight her.",,needs_review,POSSIBLE MISUSE,disagreement
+Gaslight,The lecture explained that to gaslight someone is to steadily undermine their trust in their own perceptions.,,needs_review,PLAUSIBLE USAGE,academic
+Gaslight,She didn't gaslight him; she simply forgot what she had said.,,needs_review,NEEDS CONTEXT,negation
+Gaslight,"He would gaslight her night after night, insisting that the conversations she remembered never took place.",,needs_review,PLAUSIBLE USAGE,in-context
+Gaslight,Some passengers say the airline tried to gaslight them about the delay.,,needs_review,NEEDS CONTEXT,ambiguous
+Narcissistic abuse,"We argued about who would cook, and she told me I was committing narcissistic abuse.",,needs_review,POSSIBLE MISUSE,disagreement
+Narcissistic abuse,"The seminar notes that narcissistic abuse is a popular term rather than a clinical diagnosis, and that definitions vary.",,needs_review,PLAUSIBLE USAGE,academic
+Narcissistic abuse,"That argument was unpleasant, but it wasn't narcissistic abuse.",,needs_review,NEEDS CONTEXT,negation
+Narcissistic abuse,"Over several years her partner belittled her, cut her off from her family and controlled the money, and she now attends a support group for survivors of narcissistic abuse.",,needs_review,PLAUSIBLE USAGE,in-context
+Narcissistic abuse,A blogger described narcissistic abuse in her family but gave few details.,,needs_review,NEEDS CONTEXT,ambiguous
+Trauma dumping,"My coworker talked about her stressful week over lunch, and someone muttered that it was trauma dumping.",,needs_review,POSSIBLE MISUSE,disagreement
+Trauma dumping,The article on communication etiquette defines trauma dumping as sharing distressing details without checking the listener's capacity or consent.,,needs_review,PLAUSIBLE USAGE,academic
+Trauma dumping,"She was upset and needed to talk, and since I had offered to listen, I wouldn't call it trauma dumping.",,needs_review,NEEDS CONTEXT,negation
+Trauma dumping,"A stranger at the bus stop described a violent incident in graphic detail without asking whether I wanted to hear it, which felt like trauma dumping.",,needs_review,PLAUSIBLE USAGE,in-context
+Trauma dumping,"Someone on the forum accused her of trauma dumping, but I can't tell whether anyone had agreed to listen.",NEEDS CONTEXT,reviewed,NEEDS CONTEXT,ambiguous
